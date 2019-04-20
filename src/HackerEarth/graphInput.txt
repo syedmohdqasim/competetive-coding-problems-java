@@ -1,3 +1,9 @@
+first two lines are N and Q: number of vertices and Q number of rounds to play game of piles. between Alex and Bob.
+next line contains N integers representing piles at the N vertices.
+next n-1 lines give n-1 edges int the form of(u,v).
+next q lines give out the vertices (u,v) and you have to play the game of piles with all the piles int the path of (u,v).
+for each q print out t he winner Bob or Alex
+
 8 4
 2 3 4 4 2 3 2 1
 1 2
