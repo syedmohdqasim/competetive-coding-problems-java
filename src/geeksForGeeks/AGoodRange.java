@@ -20,7 +20,7 @@ class AGoodRange {
             int e = sc.nextInt();
             Integer floor = treeSet.floor(e);
             Integer ceiling = treeSet.ceiling(e);
-            if (ceiling != e || floor != e) {
+            if (!treeSet.contains(e)) {
                 if (floor != null && ceiling != null) {
                     sum = sum.add(BigInteger.valueOf(e - 1));
                     sum = sum.add(BigInteger.valueOf(e + 1));
