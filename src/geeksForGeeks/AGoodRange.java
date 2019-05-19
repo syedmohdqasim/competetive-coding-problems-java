@@ -20,18 +20,20 @@ class AGoodRange {
             int e = sc.nextInt();
             Integer floor = treeSet.floor(e);
             Integer ceiling = treeSet.ceiling(e);
-            if (floor != null && ceiling != null) {
-                sum = sum.add(BigInteger.valueOf(e - 1));
-                sum = sum.add(BigInteger.valueOf(e + 1));
-            } else if (floor != null && ceiling == null) {
-                sum = sum.add(BigInteger.valueOf(e - 1));
-                sum = sum.add(BigInteger.valueOf(floor + 1));
-            } else if (floor == null && ceiling != null) {
-                sum = sum.add(BigInteger.valueOf(e + 1));
-                sum = sum.add(BigInteger.valueOf(ceiling - 1));
+            if (ceiling != e || floor != e) {
+                if (floor != null && ceiling != null) {
+                    sum = sum.add(BigInteger.valueOf(e - 1));
+                    sum = sum.add(BigInteger.valueOf(e + 1));
+                } else if (floor != null && ceiling == null) {
+                    sum = sum.add(BigInteger.valueOf(e - 1));
+                    sum = sum.add(BigInteger.valueOf(floor + 1));
+                } else if (floor == null && ceiling != null) {
+                    sum = sum.add(BigInteger.valueOf(e + 1));
+                    sum = sum.add(BigInteger.valueOf(ceiling - 1));
+                }
+                treeSet.add(e);
+                System.out.println(sum);
             }
-            treeSet.add(e);
-            System.out.println(sum);
         }
 
     }
